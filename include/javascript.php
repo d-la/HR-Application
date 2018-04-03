@@ -4,4 +4,5 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/chartjs/Chart.min.js"></script>
 <script src="/assets/js/app.js"></script>
