@@ -19,13 +19,13 @@ if (!$email){
       $_SESSION['userId'] = $row['id'];
       $_SESSION['userFullName'] = $row['firstname'] . ' ' . $row['lastname'];
       $_SESSION['userRole'] = $row['role'];
-      $_SESSION['userCompanyName'] = $row['companyname'];
-      $userTypeId = $row['usertypeid'];
+      $_SESSION['userOrganizationName'] = $row['organizationname'];
+      $_SESSION['userType'] = $row['usertypeid'];
     }
     $rs->close();
     $mysqli->next_result();
 
-    switch ($userTypeId){
+    switch ($_SESSION['userType']){
       case '1':
         $location = '/admin/dashboard.php';
         break;
