@@ -11,8 +11,8 @@
     <a class="list-group-item custom-item" href="/admin/dashboard.php"><i class="fa fa-area-chart fa-fw" aria-hidden="true"></i>&nbsp; Dashboard</a>
     <a class="list-group-item custom-item" href="/admin/organization.php"><i class="fa fa-university fa-fw" aria-hidden="true"></i>&nbsp; Add Organization</a>
     <a class="list-group-item custom-item" href="/admin/vieworganization.php"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; View Organizations</a>
-    <a class="list-group-item custom-item" href="/admin/employee.php"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Add User</a>
-    <a class="list-group-item custom-item" href="/admin/employee.php"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; View Users</a>
+    <a class="list-group-item custom-item" href="/admin/user.php"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Add User</a>
+    <a class="list-group-item custom-item" href="/admin/viewusers.php"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; View Users</a>
   </div>
 </aside>
 <div id="side-bar-bottom" class="slide-in aside-mobile">
