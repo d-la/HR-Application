@@ -218,7 +218,7 @@ if (empty($_GET['userid'])){
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon input-max-width">Address 2:</div>
-                    <input type="text" class="form-control" id="street2" name="street2" <?php echo !empty($userId) ? $userInformation['street2'] : ''; ?> required="required">
+                    <input type="text" class="form-control" id="street2" name="street2" <?php echo !empty($userId) ? $userInformation['street2'] : ''; ?> >
                   </div><!-- end .input-group -->
                 </div><!-- end .form-group -->
                 <!-- <div class="col-xs-12 col-md-4"> -->
