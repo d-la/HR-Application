@@ -7,7 +7,7 @@ require_once __ROOT__ . '/include/header.php';
   <body id="index">
     <div class="login-cover">
       <div class="login-cover-image">
-        <img src="assets/img/login_background2.jpg" alt="login background image scenery"/>
+        <!-- <img src="assets/img/login_background2.jpg" alt="login background image scenery"/> -->
       </div>
       <div class="login-cover-background">
       </div>

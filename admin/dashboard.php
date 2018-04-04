@@ -99,7 +99,7 @@ require_once __ROOT__ . '/include/header.php';
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead>
-                    <th>Company Name <a href="" class="badge-link float-right"><span class="badge">View All</span></a></th>
+                    <th>Organization Name <a href="vieworganization.php" class="badge-link float-right"><span class="badge">View All</span></a></th>
                   </thead>
                   <tbody>
                     <?php

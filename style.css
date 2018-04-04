@@ -139,6 +139,25 @@ h4.panel-header{
   float: right;
 }
 
+.page-loader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 99;
+  background: #e0e6eb;
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+}
+
 /* 2.1 Sidebar */
 
 @media (max-width: 535px){
@@ -582,13 +601,8 @@ fieldset div.form-group{
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.login-cover-image > img{
-  max-width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
+  background: url('/assets/img/login_background2.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .login-form{
@@ -648,6 +662,16 @@ fieldset div.form-group{
 .approve-deny-div{
   display: inline-block;
   float: right;
+}
+
+/**/
+
+.user-information{
+  height: auto;
+  width: 100%;
+  padding: 7.5px;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
 /* 5.0 Employee */
