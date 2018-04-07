@@ -5,4 +5,5 @@
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery-ui.min.js"></script>
 <script src="/assets/js/chartjs/Chart.min.js"></script>
+<script src="/assets/js/datatables/datatables.min.js"></script>
 <script src="/assets/js/app.js"></script>

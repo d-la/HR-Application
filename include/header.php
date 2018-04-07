@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/datatables/datatables.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
