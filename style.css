@@ -84,7 +84,7 @@ h4.panel-header{
 }
 
 .table{
-  table-layout: fixed;
+  /* table-layout: fixed; */
 }
 
 .col-xs-12 > .input-group{
