@@ -30,11 +30,7 @@ require_once __ROOT__ . '/include/header.php';
                   <thead>
                     <th>Organization Name</th>
                     <th>Phone Number</th>
-                    <th>Street 1</th>
-                    <th>Street 2</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
+                    <th>Address</th>
                   </thead>
                   <tbody>
                     <?php
@@ -45,11 +41,11 @@ require_once __ROOT__ . '/include/header.php';
                         echo '<tr>';
                         echo '<td>' . $row['organizationname'] . '</td>';
                         echo '<td>' . $row['phonenumber'] . '</td>';
-                        echo '<td>' . $row['street1'] . '</td>';
-                        echo '<td>' . $row['street2'] . '</td>';
-                        echo '<td>' . $row['city'] . '</td>';
-                        echo '<td>' . $row['state'] . '</td>';
-                        echo '<td>' . $row['zip'] . '<div class="inline-button"><a href="organization.php?organizationid=' . $row['id'] . '"><i class="fa fa-cogs"></i></a></div></td>';
+                        echo '<td>' . $row['street1'] . ' ';
+                        echo !empty($row['street2']) ? ' ' . $row['street2'] . ' ' : '';
+                        echo $row['city'] . ', ';
+                        echo $row['state'] . ' ';
+                        echo $row['zip'] . '<div class="inline-button"><a href="organization.php?organizationid=' . $row['id'] . '"><i class="fa fa-cogs"></i></a></div></td>';
                         echo '</tr>';
                       }
                       $rs->close();
