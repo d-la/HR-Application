@@ -8,6 +8,42 @@ require_once __ROOT__ . '/include/header.php';
   <?php
   require_once 'include/sidebar.php';
   require_once __ROOT__ . '/include/navigation.php';
+
+  $totalAmountOfOrganizations = 0;
+  $organizationsHtml = '';
+  $sql = 'CALL spSelectAllOrganizations();';
+  $rs = $mysqli->query($sql);
+  if ($rs->num_rows > 0){
+    while ($row = $rs->fetch_assoc()){
+      $organizationsHtml .= '<tr><td>' . $row['organizationname'];
+      $organizationsHtml .= '<div class="inline-button"><a href="organization.php?organizationid=' . $row['id'] . '"><i class="fa fa-cogs"></i></a></div>';
+      $organizationsHtml .= '</td></tr>';
+      $totalAmountOfOrganizations++;
+    }
+    $rs->close();
+    $mysqli->next_result();
+  }
+
+  $totalAmountOfUsers = 0;
+  $usersHtml = '';
+  $sql = 'CALL spSelectAllUsers();';
+  $rs = $mysqli->query($sql);
+  if ($rs->num_rows > 0){
+    while ($row = $rs->fetch_assoc()){
+      $usersHtml .= '<tr><td>' . $row['firstname'] . ' ';
+      if (!is_null($row['middlename'])){
+        $usersHtml .= strtoupper(substr($row['middlename'], 0, 1)) . ' ';
+      }
+      $usersHtml .= $row['lastname'] . '</td>';
+      $usersHtml .= '<td>' . $row['email'];
+      $usersHtml .= '<div class="inline-button"><a href="#?userid=' . $row['organizationid'] . '"><i class="fa fa-cogs"></i></a></div>';
+      $usersHtml .= '</td></tr>';
+      $totalAmountOfUsers++;
+    }
+    $rs->close();
+    $mysqli->next_result();
+  }
+
   ?>
   <div id="content" class="content content-mobile">
     <div class="container-fluid">
@@ -26,7 +62,7 @@ require_once __ROOT__ . '/include/header.php';
             </div><!-- end .stats-icon -->
             <div class="stats-info">
               <h4>Total Organizations</h4>
-              <p>12</p>
+              <p><?php echo $totalAmountOfOrganizations; ?></p>
             </div><!-- end .stats-info -->
             <div class="stats-link">
               <a href="javascript:;">
@@ -43,7 +79,7 @@ require_once __ROOT__ . '/include/header.php';
             </div><!-- end .stats-icon -->
             <div class="stats-info">
               <h4>Total Employees</h4>
-              <p>23</p>
+              <p><?php echo $totalAmountOfUsers; ?></p>
             </div><!-- end .stats-info -->
             <div class="stats-link">
               <a href="javascript:;">
@@ -103,17 +139,7 @@ require_once __ROOT__ . '/include/header.php';
                   </thead>
                   <tbody>
                     <?php
-                    $sql = 'CALL spSelectAllOrganizations();';
-                    $rs = $mysqli->query($sql);
-                    if ($rs->num_rows > 0){
-                      while ($row = $rs->fetch_assoc()){
-                        echo '<tr><td>' . $row['organizationname'];
-                        echo '<div class="inline-button"><a href="organization.php?organizationid=' . $row['id'] . '"><i class="fa fa-cogs"></i></a></div>';
-                        echo '</td></tr>';
-                      }
-                      $rs->close();
-                      $mysqli->next_result();
-                    }
+                    echo $organizationsHtml;
                     ?>
                   </tbody>
                 </table>
@@ -132,26 +158,11 @@ require_once __ROOT__ . '/include/header.php';
                 <table class='table table-hover'>
                   <thead>
                     <th>Full Name</th>
-                    <th>Email <a href="" class="badge-link float-right"><span class="badge">View All</span></a></th>
+                    <th>Email <a href="viewusers.php" class="badge-link float-right"><span class="badge">View All</span></a></th>
                   </thead>
                   <tbody>
                     <?php
-                    $sql = 'CALL spSelectAllUsers();';
-                    $rs = $mysqli->query($sql);
-                    if ($rs->num_rows > 0){
-                      while ($row = $rs->fetch_assoc()){
-                        echo '<tr><td>' . $row['firstname'] . ' ';
-                        if (!is_null($row['middlename'])){
-                          echo strtoupper(substr($row['middlename'], 0, 1)) . ' ';
-                        }
-                        echo $row['lastname'] . '</td>';
-                        echo '<td>' . $row['email'];
-                        echo '<div class="inline-button"><a href="#?userid=' . $row['organizationid'] . '"><i class="fa fa-cogs"></i></a></div>';
-                        echo '</td></tr>';
-                      }
-                      $rs->close();
-                      $mysqli->next_result();
-                    }
+                    echo $usersHtml;
                     ?>
                   </tbody>
                 </table>
