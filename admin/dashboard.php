@@ -65,7 +65,7 @@ require_once __ROOT__ . '/include/header.php';
               <p><?php echo $totalAmountOfOrganizations; ?></p>
             </div><!-- end .stats-info -->
             <div class="stats-link">
-              <a href="javascript:;">
+              <a href="vieworganization.php">
                 View Detail
                 <i class="fa fa-arrow-circle-o-right"></i>
               </a>
@@ -82,7 +82,7 @@ require_once __ROOT__ . '/include/header.php';
               <p><?php echo $totalAmountOfUsers; ?></p>
             </div><!-- end .stats-info -->
             <div class="stats-link">
-              <a href="javascript:;">
+              <a href="viewusers.php">
                 View Detail
                 <i class="fa fa-arrow-circle-o-right"></i>
               </a>

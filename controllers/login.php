@@ -20,6 +20,7 @@ if (!$email){
       $_SESSION['userFullName'] = $row['firstname'] . ' ' . $row['lastname'];
       $_SESSION['userRole'] = $row['role'];
       $_SESSION['userOrganizationName'] = $row['organizationname'];
+      $_SESSION['userOrganizationId'] = $row['organizationid'];
       $_SESSION['userType'] = $row['usertypeid'];
     }
     $rs->close();
