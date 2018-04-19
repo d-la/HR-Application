@@ -9,10 +9,23 @@ foreach ($_POST as $postKey => $postValue){
   $dataList[$postKey] = $postValue;
 }
 
+$emailErrorUrl = '';
+$returnUrl = '';
+switch ($_SESSION['userType']){
+  case 1:
+    $emailErrorUrl = '/admin/user.php';
+    $returnUrl = '/admin/user.php?userid=';
+    break;
+  case 2:
+    $emailErrorUrl = '/user/admin/user.php';
+    $returnUrl = '/user/admin/user.php?userid=';
+    break;
+}
+
 // Validate the email
 if (!filter_var($dataList['email'], FILTER_VALIDATE_EMAIL)){
   $_SESSION['errorMsg'] = 'Invalid Email';
-  header('Location: /admin/organization.php');
+  header('Location: ' . $emailErrorUrl);
   die();
 }
 
@@ -73,10 +86,8 @@ if ($_POST['submitButton'] === 'Add'){
 
 }
 
-$url = '/admin/user.php?userid=';
-
 $sendBackId = ($_POST['submitButton'] == 'Add') ? $userId : $dataList['userId'];
 
-header('Location: ' . $url . $sendBackId);
+header('Location: ' . $returnUrl . $sendBackId);
 die();
 ?>
