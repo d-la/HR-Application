@@ -121,6 +121,7 @@ require_once __ROOT__ . '/include/header.php';
               <h4>Data</h4>
             </div>
             <div class="panel-body">
+              <canvas id="userOverview"></canvas>
             </div>
           </div><!-- end .panel-default -->
         </div><!-- end .col-md-6 -->
@@ -164,7 +165,7 @@ require_once __ROOT__ . '/include/header.php';
               <h4>Assign Schedule</h4>
             </div>
             <div class="panel-body">
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="" method="post" enctype="multipart/form-data" name="userSchedule">
                 <div class="form-group">
                   <div class="input-group">
                     <label for="assignedUser">User</label>
@@ -178,21 +179,21 @@ require_once __ROOT__ . '/include/header.php';
                   <div class="row m-b-10">
                     <div class="col-md-6 col-xs-12">
                       <label for="startDate">Start Date:</label>
-                      <input type="date" name="startDate" class="form-control">
+                      <input type="date" name="startDate" class="form-control" required="required">
                     </div>
                     <div class="col-md-6 col-xs-12">
                       <label for="endDate">End Date:</label>
-                      <input type="date" name="endDate" class="form-control">
+                      <input type="date" name="endDate" class="form-control" required="required">
                     </div>
                   </div>
                   <div class="row m-b-10">
                     <div class="col-md-6 col-xs-12">
                       <label for="startTime">Start Time:</label>
-                      <input type="time" name="startTime" class="form-control">
+                      <input type="time" name="startTime" class="form-control" required="required">
                     </div>
                     <div class="col-md-6 col-xs-12">
                       <label for="endTime">End Time:</label>
-                      <input type="time" name="endTime" class="form-control">
+                      <input type="time" name="endTime" class="form-control" required="required">
                     </div>
                   </div>
                   <button type="submit" name="scheduleSubmit" class="btn btn-default">Submit Schedule</button>
@@ -205,5 +206,89 @@ require_once __ROOT__ . '/include/header.php';
     </div><!-- end .container-fluid -->
   </div><!-- end .content -->
   <?php require_once __ROOT__ . '/include/javascript.php'; ?>
+  <script src="/assets/js/banner-object.js"></script>
+  <script>
+  let doughnutChartData = '';
+  // const canvasElement = document.getElementById('userOverview').getContext('2d');
+  $(document).ready(() => {
+    $.ajax({
+      url: '/controllers/userdonutchart.php',
+      method: 'POST',
+      data: {
+        organizationId: <?php echo $_SESSION['userOrganizationId']; ?>
+      },
+      success: function(result){
+        console.log(result);
+        console.log(JSON.parse(result));
+        // doughnutChartData = JSON.parse(result);
+        doughnutChartData = result;
+      }
+    });
+
+
+  });
+
+  const data = {
+    type: 'doughnut',
+    data: doughnutChartData,
+    options: {
+      responsive: true,
+      legend: {
+        position: 'top'
+      },
+      title: {
+        display: true,
+        text: 'Current Roles'
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      }
+    }
+  };
+
+  window.onload = () => {
+    const canvasElement = document.getElementById('userOverview').getContext('2d');
+    window.myDoughnut = new Chart(canvasElement, data);
+  };
+
+  const scheduleSubmitButton = $('button[name="scheduleSubmit"]');
+
+  const userScheduleForm = $('form[name="userSchedule"]');
+  console.log(userScheduleForm);
+
+  $(userScheduleForm).submit((e) => {
+    e.preventDefault();
+
+    const scheduleData = {
+      userId: $('select[name="assignedUser"]').val(),
+      startDate: $('input[name="startDate"]').val(),
+      endDate: $('input[name="endDate"]').val(),
+      startTime: $('input[name="startTime"]').val(),
+      endTime: $('input[name="endTime"]').val()
+    }
+
+    $.ajax({
+      url: '/controllers/schedulesubmit.php',
+      method: 'POST',
+      data: scheduleData,
+      success: function(result){
+        if (result === 'true'){
+          let scheduleBanner = new banner('success', 'Schedule has been assigned successfully!');
+          $(userScheduleForm).before(scheduleBanner.returnHtml());
+        } else if (result === 'false'){
+          let scheduleBanner = new banner('error', 'Schedule was not assigned successfully!');
+          $(userScheduleForm).before(scheduleBanner.returnHtml());
+        }
+
+        // $(`${userScheduleForm} input select`).each(function(){
+        //   $(this).val('');
+        // });
+      }
+    }).done(() => {
+    });
+  });
+
+  </script>
 </body>
 </html>
