@@ -33,5 +33,7 @@ banner.prototype = {
       '</div>';
       break;
     }
+
+    return this.bannerHtml;
   }
 };
