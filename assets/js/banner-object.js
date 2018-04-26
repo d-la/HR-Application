@@ -7,7 +7,7 @@ function banner(bannerStatus, bannerMessage){
 }
 
 banner.prototype = {
-  returnHtml: () => {
+  returnHtml: function(){
     switch (this.bannerStatus){
       case 'success':
       this.bannerHtml = '<div class="alert alert-success fade in m-b-15 file-name-okay">' +
