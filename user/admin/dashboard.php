@@ -33,6 +33,21 @@ require_once __ROOT__ . '/include/header.php';
   } else {
     $organizationUsersHtml .= '<tr><td colspan="2">No Users saved in system</td>';
   }
+
+
+  $todaysDate = date('Y-m-d', time());
+  $numberOfSchedulesToday = 0;
+  $sql = 'CALL spSelectAllOrganizationUserSchedules(' . $_SESSION['userOrganizationId'] . ');';
+  $rs = $mysqli->query($sql);
+  if ($rs->num_rows > 0){
+    while ($row = $rs->fetch_assoc()){
+      if ($todaysDate === $row['startdate']){
+        $numberOfSchedulesToday++;
+      }
+    }
+    $rs->close();
+    $mysqli->next_result();
+  }
   ?>
   <div id="content" class="content content-mobile">
     <div class="container-fluid">
@@ -101,8 +116,8 @@ require_once __ROOT__ . '/include/header.php';
               <i class="fa fa-calendar"></i>
             </div><!-- end .stats-icon -->
             <div class="stats-info">
-              <h4>Time Off Requests</h4>
-              <p>15</p>
+              <h4>Number of Shifts</h4>
+              <p class="schedule-count"><?php echo $numberOfSchedulesToday; ?></p>
             </div><!-- end .stats-info -->
             <div class="stats-link">
               <a href="javascript:;">
@@ -207,25 +222,30 @@ require_once __ROOT__ . '/include/header.php';
   </div><!-- end .content -->
   <?php require_once __ROOT__ . '/include/javascript.php'; ?>
   <script src="/assets/js/banner-object.js"></script>
+  <script src="/assets/js/ajax-function.js"></script>
   <script>
   let doughnutChartData = '';
   // const canvasElement = document.getElementById('userOverview').getContext('2d');
   $(document).ready(() => {
-    $.ajax({
-      url: '/controllers/userdonutchart.php',
-      method: 'POST',
-      data: {
-        organizationId: <?php echo $_SESSION['userOrganizationId']; ?>
-      },
-      success: function(result){
-        console.log(result);
-        console.log(JSON.parse(result));
-        // doughnutChartData = JSON.parse(result);
-        doughnutChartData = result;
-      }
-    });
-
-
+    // $.ajax({
+    //   url: '/controllers/userdonutchart.php',
+    //   method: 'POST',
+    //   data: {
+    //     organizationId: <?php echo $_SESSION['userOrganizationId']; ?>
+    //   },
+    //   success: function(result){
+    //     // doughnutChartData = JSON.parse(result);
+    //     doughnutChartData = result;
+    //   }
+    // });
+    //
+    // const testData = {
+    //   url: '/controllers/totalcurrentschedules.php',
+    //   method: 'POST',
+    //   data: {
+    //     organizationId: 2
+    //   }
+    // }
   });
 
   const data = {
@@ -252,40 +272,44 @@ require_once __ROOT__ . '/include/header.php';
     window.myDoughnut = new Chart(canvasElement, data);
   };
 
-  const scheduleSubmitButton = $('button[name="scheduleSubmit"]');
-
   const userScheduleForm = $('form[name="userSchedule"]');
-  console.log(userScheduleForm);
-
   $(userScheduleForm).submit((e) => {
     e.preventDefault();
 
     const scheduleData = {
-      userId: $('select[name="assignedUser"]').val(),
-      startDate: $('input[name="startDate"]').val(),
-      endDate: $('input[name="endDate"]').val(),
-      startTime: $('input[name="startTime"]').val(),
-      endTime: $('input[name="endTime"]').val()
-    }
-
-    $.ajax({
       url: '/controllers/schedulesubmit.php',
       method: 'POST',
-      data: scheduleData,
-      success: function(result){
-        if (result === 'true'){
-          let scheduleBanner = new banner('success', 'Schedule has been assigned successfully!');
-          $(userScheduleForm).before(scheduleBanner.returnHtml());
-        } else if (result === 'false'){
-          let scheduleBanner = new banner('error', 'Schedule was not assigned successfully!');
-          $(userScheduleForm).before(scheduleBanner.returnHtml());
-        }
-
-        // $(`${userScheduleForm} input select`).each(function(){
-        //   $(this).val('');
-        // });
+      data: {
+        userId: $('select[name="assignedUser"]').val(),
+        startDate: $('input[name="startDate"]').val(),
+        endDate: $('input[name="endDate"]').val(),
+        startTime: $('input[name="startTime"]').val(),
+        endTime: $('input[name="endTime"]').val()
       }
-    }).done(() => {
+    }
+
+    callAjax(scheduleData).done(function(result){
+      if (result === 'true'){
+        // let todaysDate = new Date();
+        // let todaysCompareableDate = `${todaysDate.month}/${todaysDate.day}/${todaysDate.year}`;
+
+        let scheduleBanner = new banner('success', 'Schedule has been assigned successfully!');
+        $(userScheduleForm).before(scheduleBanner.returnHtml());
+
+        // if (scheduleData.data.endDate == todaysCompareableDate){
+        //   $('p.schedule-count').text($(this).text() + '1');
+        // }
+
+        // If successful, remove values from the inputs
+        $('form[name="userSchedule"] input').each(function(){
+          $(this).val('');
+        });
+
+        $('form[name="userSchedule"] select')[0].selectedIndex = 0;
+      } else if (result === 'false'){
+        let scheduleBanner = new banner('error', 'Schedule was not assigned successfully!');
+        $(userScheduleForm).before(scheduleBanner.returnHtml());
+      }
     });
   });
 
