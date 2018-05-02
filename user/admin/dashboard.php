@@ -62,7 +62,7 @@ require_once __ROOT__ . '/include/header.php';
         <div class="col-md-3 col-xs-12">
           <div class="widget application-background">
             <div class="stats-icon">
-              <i class="fa fa-building-o"></i>
+              <i class="fa fa-users"></i>
             </div><!-- end .stats-icon -->
             <div class="stats-info">
               <h4>Total Users</h4>
@@ -133,7 +133,7 @@ require_once __ROOT__ . '/include/header.php';
           <div class="panel panel-default">
             <div class="panel-custom-heading">
               <?php include __ROOT__ . '/templates/panel-buttons.php'; ?>
-              <h4>Data</h4>
+              <h4>Current Roles Within Organization</h4>
             </div>
             <div class="panel-body">
               <canvas id="userOverview"></canvas>
