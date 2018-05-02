@@ -18,7 +18,7 @@ require_once __ROOT__ . '/include/header.php';
   if ($rs->num_rows > 0){
     while ($row = $rs->fetch_assoc()){
       $organizationUsersHtml .= '<tr><td>' . $row['firstname'] . ' ' . $row['lastname'] . '</td><td>' . $row['role'];
-      if (!$row['userid'] == $_SESSION['userId']){
+      if ($row['userid'] !== $_SESSION['userId']){
         $organizationUsersHtml .= '<div class="inline-button"><a href="?userid=' . $row['organizationid'] . '"><i class="fa fa-cogs"></i></a></div>';
       }
       $organizationUsersHtml .= '</tr>';
@@ -218,59 +218,42 @@ require_once __ROOT__ . '/include/header.php';
           </div><!-- end .panel -->
         </div><!-- end .col-md-6 -->
       </div><!-- end .row -->
+      <input type="hidden" name="organizationId" value="<?php echo $_SESSION['userOrganizationId']; ?>" />
     </div><!-- end .container-fluid -->
   </div><!-- end .content -->
   <?php require_once __ROOT__ . '/include/javascript.php'; ?>
   <script src="/assets/js/banner-object.js"></script>
   <script src="/assets/js/ajax-function.js"></script>
   <script>
-  let doughnutChartData = '';
-  // const canvasElement = document.getElementById('userOverview').getContext('2d');
   $(document).ready(() => {
-    // $.ajax({
-    //   url: '/controllers/userdonutchart.php',
-    //   method: 'POST',
-    //   data: {
-    //     organizationId: <?php echo $_SESSION['userOrganizationId']; ?>
-    //   },
-    //   success: function(result){
-    //     // doughnutChartData = JSON.parse(result);
-    //     doughnutChartData = result;
-    //   }
-    // });
-    //
-    // const testData = {
-    //   url: '/controllers/totalcurrentschedules.php',
-    //   method: 'POST',
-    //   data: {
-    //     organizationId: 2
-    //   }
-    // }
-  });
-
-  const data = {
-    type: 'doughnut',
-    data: doughnutChartData,
-    options: {
-      responsive: true,
-      legend: {
-        position: 'top'
-      },
-      title: {
-        display: true,
-        text: 'Current Roles'
-      },
-      animation: {
-        animateScale: true,
-        animateRotate: true
+    const doughnutData = {
+      url: '/controllers/userdoughnutchart.php',
+      method: 'POST',
+      data: {
+        organizationId: $('input[name="organizationId"]').val()
       }
-    }
-  };
+    };
 
-  window.onload = () => {
-    const canvasElement = document.getElementById('userOverview').getContext('2d');
-    window.myDoughnut = new Chart(canvasElement, data);
-  };
+    callAjax(doughnutData).done((returnedJsonData) => {
+      // Populate doughnut chart
+      const canvasElement = document.getElementById('userOverview').getContext('2d');
+      let userDoughnutChart = new Chart(canvasElement, {
+        type: 'doughnut',
+        data: JSON.parse(returnedJsonData),
+        options: {
+          title:{
+            display: true,
+            position: 'top',
+            text: 'Roles Within Organization'
+          },
+          animation: {
+            animateRotate: true,
+            animateScale: true
+          }
+        }
+      });
+    });
+  });
 
   const userScheduleForm = $('form[name="userSchedule"]');
   $(userScheduleForm).submit((e) => {
