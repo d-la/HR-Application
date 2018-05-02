@@ -9,7 +9,6 @@
 
   <div class="list-group">
     <a class="list-group-item custom-item" href="../admin/dashboard.php"><i class="fa fa-area-chart fa-fw" aria-hidden="true"></i>&nbsp; Dashboard</a>
-    <a class="list-group-item custom-item" href="../admin/department.php"><i class="fa fa-id-card-o fa-fw" aria-hidden="true"></i>&nbsp; Add Depatment</a>
     <a class="list-group-item custom-item" href="../admin/user.php"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Add Employee</a>
     <a class="list-group-item custom-item" href="../admin/schedule.php"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp; Schedule Overview</a>
   </div>
