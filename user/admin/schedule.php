@@ -112,7 +112,7 @@ require_once __ROOT__ . '/include/header.php';
               <h4>Fill out this form to assign a user a schedule</h4>
             </div>
             <div class="panel-body">
-              <form action="" method="post">
+              <form action="/controllers/schedulesubmit.php" method="post">
                 <div class="form-group">
                   <div class="input-group">
                     <label for="assignedUser">User</label>
