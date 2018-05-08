@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/root.php';
+require_once __ROOT__ . '/include/mysqlconn.php';
 require_once __ROOT__ . '/include/sessionstart.php';
 require_once __ROOT__ . '/include/header.php';
 ?>
@@ -7,6 +8,19 @@ require_once __ROOT__ . '/include/header.php';
   <?php
   require_once 'include/sidebar.php';
   require_once __ROOT__ . '/include/navigation.php';
+
+  $usersValidForSchedule = '';
+  $sql = 'CALL spSelectOrganizationUsers(' . $_SESSION['userOrganizationId'] . ');';
+  $rs = $mysqli->query($sql);
+  if ($rs->num_rows > 0){
+    while ($row = $rs->fetch_assoc()){
+      if ($row['usertypeid'] == 3){
+        $usersValidForSchedule .= '<option value="' . $row['userid'] . '">' . $row['firstname'] . ' ' . $row['lastname'] . '</option>';
+      }
+    }
+    $rs->close();
+    $mysqli->next_result();
+  }
   ?>
   <div id="content" class="content content-mobile">
     <div class="container-fluid">
@@ -29,41 +43,22 @@ require_once __ROOT__ . '/include/header.php';
                       <th class="text-center">User</th>
                       <th class="text-center">Start Day</th>
                       <th class="text-center">End Day</th>
-                      <th class="text-center">Options</th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Data 1</td>
                         <td>Data 2</td>
                         <td>Data 3</td>
-                        <!-- <td>
-                          <div class="text-right approve-deny-div">
-                            <button type="button" class="btn btn-default">Approve</button>
-                            <button type="button" class="btn btn-default">Deny</button>
-                          </div>
-                        </td> -->
                       </tr>
                       <tr>
                         <td>Data 1</td>
                         <td>Data 2</td>
                         <td>Data 3</td>
-                        <!-- <td>
-                          <div class="text-right approve-deny-div">
-                            <button type="button" class="btn btn-default">Approve</button>
-                            <button type="button" class="btn btn-default">Deny</button>
-                          </div>
-                        </td> -->
                       </tr>
                       <tr>
                         <td>Data 1</td>
                         <td>Data 2</td>
                         <td>Data 3</td>
-                        <!-- <td>
-                          <div class="text-right approve-deny-div">
-                            <button type="button" class="btn btn-default">Approve</button>
-                            <button type="button" class="btn btn-default">Deny</button>
-                          </div>
-                        </td> -->
                       </tr>
                     </tbody>
                   </table>
@@ -79,9 +74,34 @@ require_once __ROOT__ . '/include/header.php';
               <h4 class="panel-header">Current Schedules</h4>
             </div>
             <div class="panel-body">
-              <form action="" method="post">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <?php
+                  $scheduleCount = 0;
+                  $todaysDate = date('Y-m-d', time());
+                  $sql = 'CALL spSelectAllOrganizationUserSchedules(' . $_SESSION['userOrganizationId'] . ');';
+                  $rs = $mysqli->query($sql);
+                  if ($rs->num_rows > 0){
+                    echo '<thead><th>User</th><th>Day</th><th>Time</th></thead>';
+                    while ($row = $rs->fetch_assoc()){
+                      if ($row['startdate'] === $todaysDate){
+                        echo '<td>' . $row['firstname'] . ' ' . $row['lastname'] . '</td><td>' . $row['startdate'] . ' -> ' . $row['enddate'] . '</td><td>' . $row['starttime'] . ' -> ' . $row['endtime'] . '</td>';
+                        $scheduleCount++;
+                      }
+                    }
+                    $rs->close();
+                    $mysqli->query($sql);
+                  } else {
+                    echo '<td colspan="3" class="text-center">No Schedules Today</td>';
+                  }
 
-              </form><!-- end form -->
+                  if ($scheduleCount === 0){
+                    echo '<td colspan="3" class="text-center">No Schedules Today</td>';
+                  }
+
+                  ?>
+                </table>
+              </div><!-- end .table-responsive -->
             </div><!-- end .panel-body -->
           </div><!-- end .panel-default -->
         </div><!-- end .col-md-12 -->
@@ -89,35 +109,42 @@ require_once __ROOT__ . '/include/header.php';
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-custom-heading">
-              <h4>Use this form to assign schedules or days off</h4>
+              <h4>Fill out this form to assign a user a schedule</h4>
             </div>
             <div class="panel-body">
               <form action="" method="post">
                 <div class="form-group">
                   <div class="input-group">
-                    <div class="input-group-addon input-max-width">Email:</div>
-                    <input type="email" class="form-control" id="email" name="email" required="required">
-                  </div><!-- end .input-group -->
-                </div><!-- end .form-group -->
+                    <label for="assignedUser">User</label>
+                    <select name="assignedUser" class="form-control" required="required">
+                      <option value="0">None Selected</option>
+                      <?php echo !empty($usersValidForSchedule) ? $usersValidForSchedule : ''; ?>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon input-max-width">Password:</div>
-                    <input type="password" class="form-control" id="password" name="password" required="required">
-                  </div><!-- end .input-group -->
-                </div><!-- end .form-group -->
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon input-max-width">Password:</div>
-                    <input type="password" class="form-control" id="password" name="password" required="required">
-                  </div><!-- end .input-group -->
-                </div><!-- end .form-group -->
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon input-max-width">Password:</div>
-                    <input type="password" class="form-control" id="password" name="password" required="required">
-                  </div><!-- end .input-group -->
-                </div><!-- end .form-group -->
-                <button type="submit" class="btn btn-default">Submit</button>
+                  <div class="row m-b-10">
+                    <div class="col-md-6 col-xs-12">
+                      <label for="startDate">Start Date:</label>
+                      <input type="date" name="startDate" class="form-control" required="required">
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                      <label for="endDate">End Date:</label>
+                      <input type="date" name="endDate" class="form-control" required="required">
+                    </div>
+                  </div>
+                  <div class="row m-b-10">
+                    <div class="col-md-6 col-xs-12">
+                      <label for="startTime">Start Time:</label>
+                      <input type="time" name="startTime" class="form-control" required="required">
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                      <label for="endTime">End Time:</label>
+                      <input type="time" name="endTime" class="form-control" required="required">
+                    </div>
+                  </div>
+                  <button type="submit" name="scheduleSubmit" class="btn btn-default">Submit Schedule</button>
+                </div>
               </form><!-- end form -->
             </div><!-- end .panel-body -->
           </div><!-- end .panel-default -->
