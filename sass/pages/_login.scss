@@ -1,0 +1,62 @@
+// Index in the views folder
+.login{
+    width: 100%;
+    height: 100vh;
+
+    &__left-half{
+        flex: 0 0 70%;
+        background-image: url('/img/login_img.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__right-half{
+        flex: 0 0 30%;
+        padding: 1em;
+    }
+
+    &__title{
+        margin: 3em 0 0;
+        text-align: center;
+    }
+
+    &__form{
+        margin: 3em 3em 0;
+        padding-bottom: 5em;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__copyright{
+        font-size: .8em;
+        color: #eee;
+        text-align: center;
+        padding-top: .75em;
+    }
+}
+
+@media (max-width: 1200px){
+    .login{
+
+        &__left-half{
+            flex: 0 1 60%;
+        }
+
+        &__right-half{
+            flex: 0 1 40%;
+        }
+    }
+}
+
+
+@media (max-width: 767px){
+    .login{
+
+        &__left-half{
+            display: none;
+        }
+
+        &__right-half{
+            flex: 0 1 100%;
+        }
+    }
+}
