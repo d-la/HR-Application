@@ -4,14 +4,16 @@
     height: 100vh;
 
     &__left-half{
-        flex: 0 0 70%;
+        // flex: 0 0 70%;
+        flex: 0 1 100%;
         background-image: url('/img/login_img.jpg');
         background-size: cover;
         background-position: center;
     }
 
     &__right-half{
-        flex: 0 0 30%;
+        // flex: 0 0 30%;
+        flex: 0 0 31.25em;
         padding: 1em;
     }
 
@@ -23,29 +25,29 @@
     &__form{
         margin: 3em 3em 0;
         padding-bottom: 5em;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #eaeaea;
     }
 
     &__copyright{
         font-size: .8em;
-        color: #eee;
+        color: #eaeaea;
         text-align: center;
         padding-top: .75em;
     }
 }
 
-@media (max-width: 1200px){
-    .login{
+// @media (max-width: 1200px){
+//     .login{
 
-        &__left-half{
-            flex: 0 1 60%;
-        }
+//         &__left-half{
+//             flex: 0 1 60%;
+//         }
 
-        &__right-half{
-            flex: 0 1 40%;
-        }
-    }
-}
+//         &__right-half{
+//             flex: 0 1 40%;
+//         }
+//     }
+// }
 
 
 @media (max-width: 767px){
