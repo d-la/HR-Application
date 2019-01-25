@@ -1,5 +1,13 @@
 
+@import "abstracts/variables";
+
 @import "base/base";
+@import "base/typography";
+
+@import "components/sidebar";
+@import "components/main";
+@import "components/panel";
+@import "components/user";
 
 @import "layouts/flex";
 
