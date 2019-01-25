@@ -13,8 +13,7 @@
     <body>
         <div class="login flex flex--flow-row flex--wrap">
 
-            <div class="login__left-half">
-                <!-- <img src="/img/login_img.jpg" alt="Photo by James Connolly: @jampatcon at https://unsplash.com" height="100%" width="100%"> -->
+            <div class="login__left-half" data-image-author="James Connollly" data-image-origin-url="https://unsplash.com/photos/WUo0EdSv9OU">
             </div>
 
             <div class="login__right-half">
