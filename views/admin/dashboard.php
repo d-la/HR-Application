@@ -94,32 +94,66 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel__header">
-                                This is a panel header
+                    <div class="col-lg-3">
+                        <div class="widget">
+                            <div class="widget__title">
+                            Total Employees
                             </div>
-                            <div class="panel__body">
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi perspiciatis sed ratione nemo 
-                                    facilis reprehenderit fugiat nesciunt! At ipsam perspiciatis quisquam impedit, nisi consequatur 
-                                    ipsa sint illo inventore eligendi voluptate.
-                                </p>
+                            <div class="widget__content">
+                            125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel__header">
-                                This is a panel header
+                    <div class="col-lg-3">
+                        <div class="widget">
+                            <div class="widget__title">
+                            Total Employees
                             </div>
-                            <div class="panel__body">
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi perspiciatis sed ratione nemo 
-                                    facilis reprehenderit fugiat nesciunt! At ipsam perspiciatis quisquam impedit, nisi consequatur 
-                                    ipsa sint illo inventore eligendi voluptate.
-                                </p>
+                            <div class="widget__content">
+                            125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="widget">
+                            <div class="widget__title">
+                            Total Employees
+                            </div>
+                            <div class="widget__content">
+                            125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="widget">
+                            <div class="widget__title">
+                            Total Employees
+                            </div>
+                            <div class="widget__content">
+                                125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
                             </div>
                         </div>
                     </div>
