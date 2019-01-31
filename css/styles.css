@@ -1,6 +1,7 @@
 body {
   font-size: 16px !important;
   position: relative;
+  background-color: #E9EBEE;
 }
 
 .container-fluid {
@@ -20,7 +21,7 @@ body {
   left: 0;
   width: 15.625em;
   height: 100%;
-  background-color: #e6e4e4;
+  background-color: #E9EBEE;
 }
 .sidebar__user-info {
   display: block;
@@ -58,6 +59,8 @@ body {
   display: block;
   width: 100%;
   margin: 1em 0;
+  border-radius: 4px;
+  background-color: #FFF;
 }
 .panel__header {
   position: relative;
@@ -87,9 +90,51 @@ body {
   font-size: 0.85em;
 }
 
+.widget {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1em;
+  overflow: hidden;
+  margin: 1em 0;
+}
+.widget__title {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+.widget__content {
+  font-size: 1.75em;
+}
+.widget__link {
+  display: block;
+  font-size: 0.75em;
+  text-align: right;
+  margin: 1em -1.5em -1.3em;
+  padding: 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.85);
+}
+.widget__link:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease-in;
+}
+
 @supports (display: flex) {
   .flex {
     display: flex;
+  }
+  .flex--flow-row {
+    flex-flow: row;
+  }
+  .flex--wrap {
+    flex-wrap: wrap;
+  }
+  .flex--no-wrap {
+    flex-wrap: nowrap;
   }
 }
 .login {
