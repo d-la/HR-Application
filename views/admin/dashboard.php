@@ -130,7 +130,7 @@
                     </div><!-- end .col-lg-3 -->
 
                     <div class="col-xs-12 col-md-6 col-lg-3">
-                        <div class="widget">
+                        <div class="widget widget--green-bg">
                             <div class="widget__title">
                             Total Employees
                             </div>
@@ -146,7 +146,7 @@
                     </div><!-- end .col-lg-3 -->
 
                     <div class="col-xs-12 col-md-6 col-lg-3">
-                        <div class="widget">
+                        <div class="widget widget--black-bg">
                             <div class="widget__title">
                             Total Employees
                             </div>

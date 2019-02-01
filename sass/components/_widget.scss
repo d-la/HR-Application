@@ -17,6 +17,16 @@
         color: #FFF;
     }
 
+    &--black-bg{
+        background: linear-gradient(to right bottom, rgba($random-black-light, 1), rgba($random-black, .6));
+        color: #FFF;
+    }
+
+    &--green-bg{
+        background: linear-gradient(to right bottom, rgba($random-green, 1), rgba($random-green-dark, .6));
+        color: #FFF;
+    }
+
     &__title{
         font-size: .9em;
         text-transform: uppercase;

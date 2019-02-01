@@ -118,6 +118,14 @@ body {
   background: linear-gradient(to right bottom, #d44638, rgba(178, 49, 33, 0.9));
   color: #FFF;
 }
+.widget--black-bg {
+  background: linear-gradient(to right bottom, #515151, rgba(38, 38, 38, 0.6));
+  color: #FFF;
+}
+.widget--green-bg {
+  background: linear-gradient(to right bottom, #55c57a, rgba(40, 180, 133, 0.6));
+  color: #FFF;
+}
 .widget__title {
   font-size: 0.9em;
   text-transform: uppercase;
