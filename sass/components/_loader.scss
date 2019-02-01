@@ -1,0 +1,8 @@
+.loader{
+    border: .5em solid $random-black;
+    border-top: .5em solid $fb-blue;
+    border-radius: 50%;
+    width: 3.5em;
+    height: 3.5em;
+    animation: spin 2s linear infinite;
+}
