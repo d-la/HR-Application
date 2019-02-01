@@ -1,0 +1,41 @@
+.custom-card{
+    position: relative;
+    display: block;
+    padding: 1em;
+    background: #FFF;
+    border-radius: 5px;
+    margin: 1em 0;
+
+    &.flex--no-wrap{
+        flex-wrap: wrap;
+    }
+
+    &__left-content{
+        flex: 0 1 80%;
+        margin: .75em 0;
+        border-right: 1px solid #eee;
+    }
+
+    &__right-content{
+        flex: 0 0 20%;
+        margin: .75em 0;
+        padding: 0 .75em;
+    }
+}
+
+@media (max-width: 767px){
+    .custom-card{
+
+        &__left-content{
+            flex: 0 0 100%;
+            border-right: none;
+            border-bottom: 1px solid #eee;
+            padding: 0 .75em;
+        }
+
+        &__right-content{
+            flex: 0 0 100%;
+            padding: 0 .75em;
+        }
+    }
+}
