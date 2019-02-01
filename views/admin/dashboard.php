@@ -106,9 +106,9 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <div class="widget__link">
+                                <a class="widget__link widget__link--color-white">
                                     View Details &rarr;
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div><!-- end .col-lg-3 -->
@@ -122,9 +122,9 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <div class="widget__link">
+                                <a class="widget__link widget__link--color-white">
                                     View Details &rarr;
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div><!-- end .col-lg-3 -->
@@ -138,9 +138,9 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <div class="widget__link">
+                                <a class="widget__link widget__link--color-white">
                                     View Details &rarr;
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div><!-- end .col-lg-3 -->
@@ -154,9 +154,9 @@
                                 125
                             </div>
                             <div class="widget__footer">
-                                <div class="widget__link">
+                                <a class="widget__link widget__link--color-white">
                                     View Details &rarr;
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
