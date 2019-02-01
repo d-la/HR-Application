@@ -49,7 +49,7 @@
             </div>
         </nav>
 
-        <aside class="sidebar">
+        <aside class="sidebar sidebar--small">
             <ul class="sidebar__list">
                 <li class="sidebar__user-info">
                     <div class="user">
@@ -61,28 +61,28 @@
                         </span>
                     </div>
                 </li>
-                <a href="/admin/dashboard" class="sidebar__link">
+                <a href="/admin/dashboard" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         <i class="fas fa-chart-line"></i>
                         Dashboard
                     </li>
                 </a>
-                <a href="/admin/calendar" class="sidebar__link">
+                <a href="/admin/calendar" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         Hello
                     </li>
                 </a>
-                <a href="" class="sidebar__link">
+                <a href="" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         Hello
                     </li>
                 </a>
-                <a href="" class="sidebar__link">
+                <a href="" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         Hello
                     </li>
                 </a>
-                <a href="" class="sidebar__link">
+                <a href="" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         Hello
                     </li>
@@ -94,7 +94,39 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-xs-12 col-md-6 col-lg-3">
+                        <div class="widget widget--blue-bg">
+                            <div class="widget__title">
+                            Total Employees
+                            </div>
+                            <div class="widget__content">
+                            125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end .col-lg-3 -->
+
+                    <div class="col-xs-12 col-md-6 col-lg-3">
+                        <div class="widget widget--red-bg">
+                            <div class="widget__title">
+                            Total Employees
+                            </div>
+                            <div class="widget__content">
+                            125
+                            </div>
+                            <div class="widget__footer">
+                                <div class="widget__link">
+                                    View Details &rarr;
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end .col-lg-3 -->
+
+                    <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget">
                             <div class="widget__title">
                             Total Employees
@@ -108,41 +140,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- end .col-lg-3 -->
 
-                    <div class="col-lg-3">
-                        <div class="widget">
-                            <div class="widget__title">
-                            Total Employees
-                            </div>
-                            <div class="widget__content">
-                            125
-                            </div>
-                            <div class="widget__footer">
-                                <div class="widget__link">
-                                    View Details &rarr;
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="widget">
-                            <div class="widget__title">
-                            Total Employees
-                            </div>
-                            <div class="widget__content">
-                            125
-                            </div>
-                            <div class="widget__footer">
-                                <div class="widget__link">
-                                    View Details &rarr;
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
+                    <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget">
                             <div class="widget__title">
                             Total Employees
@@ -154,6 +154,31 @@
                                 <div class="widget__link">
                                     View Details &rarr;
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end .row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel__header">
+                                Some data here
+                            </div>
+                            <div class="panel__body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur qui rerum natus quia unde,
+                                eum, quos magni est tenetur voluptatem repudiandae! Minus culpa optio delectus debitis libero, repudiandae consequuntur!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel__header">
+                                Some data here
+                            </div>
+                            <div class="panel__body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur qui rerum natus quia unde,
+                                eum, quos magni est tenetur voluptatem repudiandae! Minus culpa optio delectus debitis libero, repudiandae consequuntur!
                             </div>
                         </div>
                     </div>
