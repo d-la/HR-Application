@@ -6,6 +6,14 @@
     background-color: $theme-grey;
     padding: 1em;
 
+    &--closed{
+        left: -15.625em !important;
+    }
+
+    &--open{
+        left: 0 !important;
+    }
+
     &__user-info{
         display: block;
         padding: 1em 0;
