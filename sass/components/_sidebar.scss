@@ -3,12 +3,14 @@
     left: 0;
     width: 15.625em;
     height: 100%;
-    // background-color: $theme-color-grey;
     background-color: $theme-grey;
+    padding: 1em;
 
     &__user-info{
         display: block;
-        padding: 1em;
+        padding: 1em 0;
+        margin: 0;
+        border-bottom: 1px solid #000;
     }
 
     &__list{
@@ -19,17 +21,24 @@
 
     &__link{
         display: block;
-        padding: 1em;
-        border-bottom: 1px solid #FFF;
+        padding: .55em;
         color: #000;
+        margin: .75em 0;
+        font-size: .85em;
 
-        &:hover{
-            background-color: $theme-color-grey-dark;
-            text-decoration: none;
+        &--round-borders{
+            border-radius: 5px;
         }
 
-        &:first-of-type{
-            border-top: 1px solid #FFF;
+        &--active{
+            background: $fb-blue;
+            color: #FFF;
+        }
+
+        &:hover{
+            background-color: $fb-blue;
+            color: #FFF;
+            text-decoration: none;
         }
     }
 }
