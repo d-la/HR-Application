@@ -10,7 +10,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" href="/css/styles.min.css" />
         <title>Some Application</title>
     </head>
@@ -63,18 +64,20 @@
                 </li>
                 <a href="/admin/dashboard" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fa fa-line-chart"></i>
                         Dashboard
                     </li>
                 </a>
                 <a href="/admin/calendar" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
-                        Hello
+                        <i class="fa fa-university"></i>
+                        Organizations
                     </li>
                 </a>
                 <a href="" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
-                        Hello
+                        <i class="fa fa-users"></i>
+                        User List
                     </li>
                 </a>
                 <a href="" class="sidebar__link sidebar__link--round-borders">
