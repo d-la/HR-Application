@@ -6,6 +6,7 @@
     padding: 1em;
     overflow: hidden;
     margin: 1em 0;
+    animation: moveUp .8s linear;
 
     &--blue-bg{
         background: linear-gradient(to right bottom, rgba($fb-blue-light, 1), rgba($fb-blue-dark, .9));
