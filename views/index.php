@@ -11,7 +11,7 @@
         <title>Some Application</title>
     </head>
     <body>
-        <div class="login flex flex--flow-row flex--wrap">
+        <div class="login flex flex--flow-row flex--no-wrap">
 
             <div class="login__left-half" data-image-author="James Connollly" data-image-origin-url="https://unsplash.com/photos/WUo0EdSv9OU">
             </div>

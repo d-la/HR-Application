@@ -148,6 +148,7 @@ body {
   background-position: center;
 }
 .login__right-half {
+  background: #fff;
   flex: 0 0 31.25em;
   padding: 1em;
 }
