@@ -143,6 +143,9 @@ body {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.85);
 }
+.widget__link--color-white {
+  color: #fff;
+}
 .widget__link:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.3);

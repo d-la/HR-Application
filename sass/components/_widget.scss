@@ -46,6 +46,10 @@
         background-color: rgba($color-black, .15);
         color: rgba($color-black, .85);
 
+        &--color-white{
+            color: $color-white;
+        }
+
         &:hover{
             cursor: pointer;
             background-color: rgba($color-black, .3);
