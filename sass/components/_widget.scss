@@ -7,6 +7,16 @@
     overflow: hidden;
     margin: 1em 0;
 
+    &--blue-bg{
+        background: linear-gradient(to right bottom, rgba($fb-blue-light, 1), rgba($fb-blue-dark, .9));
+        color: #FFF;
+    }
+
+    &--red-bg{
+        background: linear-gradient(to right bottom, rgba($gmail-red, 1), rgba($gmail-red-dark, .9));
+        color: #FFF;
+    }
+
     &__title{
         font-size: .9em;
         text-transform: uppercase;
