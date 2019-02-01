@@ -16,6 +16,11 @@
         <title>Some Application</title>
     </head>
     <body>
+        <div class="loading-screen">
+            <div class="loading-screen__content">
+                <article class="loader"></article>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -159,7 +164,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- end .col-lg-3 -->
                 </div><!-- end .row -->
                 <div class="row">
                     <div class="col-md-6">
@@ -172,7 +177,7 @@
                                 eum, quos magni est tenetur voluptatem repudiandae! Minus culpa optio delectus debitis libero, repudiandae consequuntur!
                             </div>
                         </div>
-                    </div>
+                    </div><!-- end .col-md-6 -->
 
                     <div class="col-md-6">
                         <div class="panel">
@@ -184,8 +189,31 @@
                                 eum, quos magni est tenetur voluptatem repudiandae! Minus culpa optio delectus debitis libero, repudiandae consequuntur!
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div><!-- end .col-md-6 -->
+                </div><!-- end .row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="custom-card flex flex--flow-row flex--no-wrap">
+                            <div class="custom-card__left-content">
+                                <h1>Hello</h1>
+                            </div>
+                            <div class="custom-card__right-content">
+                                Total: 2
+                            </div>
+                        </div>
+                    </div><!-- end .col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="custom-card flex flex--flow-row flex--no-wrap">
+                            <div class="custom-card__left-content">
+                                <h1>Hello</h1>
+                            </div>
+                            <div class="custom-card__right-content">
+                                Total: 2
+                            </div>
+                        </div>
+                    </div><!-- end .col-md-6 -->
+                </div><!-- end .row -->
             </div>
         </main>
 
@@ -193,5 +221,20 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+        <script>
+            $(document).ready( () => {
+                const windowWidth = $(window).width();
+                // console.log(windowWidth);
+
+                if (windowWidth < 1068){
+                    const sideBar = $('aside.sidebar');
+                    $(sideBar).addClass('sidebar--closed');
+                }
+
+
+                $('.loading-screen').hide();
+            });
+        </script>
     </body>
 </html>
