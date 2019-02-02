@@ -6,12 +6,10 @@
     background-color: $theme-grey;
     padding: 1em;
 
-    &--closed{
-        left: -15.625em !important;
-    }
-
-    &--open{
+    &--open-mobile{
+        animation: sidebarMoveInFromLeft .2s;
         left: 0 !important;
+        z-index: 11;
     }
 
     &__user-info{
@@ -48,5 +46,11 @@
             color: #FFF;
             text-decoration: none;
         }
+    }
+}
+
+@media (max-width: 700px){
+    .sidebar{
+        left: -15.625em;
     }
 }

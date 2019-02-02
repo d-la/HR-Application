@@ -18,3 +18,13 @@
         transform: translate(0);
     }
 }
+
+@keyframes sidebarMoveInFromLeft{
+    0% {
+        transform: translateX(-10em);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
