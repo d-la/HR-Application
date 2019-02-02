@@ -22,10 +22,15 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <!-- <a class="navbar-brand" data-click="toggle-sidebar">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a> -->
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <button class="navbar-toggler" data-click="toggle-sidebar">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,7 +60,7 @@
             </div>
         </nav>
 
-        <aside class="sidebar sidebar--small">
+        <aside class="sidebar">
             <ul class="sidebar__list">
                 <li class="sidebar__user-info">
                     <div class="user">
@@ -73,7 +78,7 @@
                         Dashboard
                     </li>
                 </a>
-                <a href="/admin/calendar" class="sidebar__link sidebar__link--round-borders">
+                <a href="/admin/organizations" class="sidebar__link sidebar__link--round-borders">
                     <li class="sidebar__list-item">
                         <i class="fa fa-university"></i>
                         Organizations
@@ -224,16 +229,27 @@
     
         <script>
             $(document).ready( () => {
-                const windowWidth = $(window).width();
-                // console.log(windowWidth);
-
-                if (windowWidth < 1068){
-                    const sideBar = $('aside.sidebar');
-                    $(sideBar).addClass('sidebar--closed');
-                }
-
+                const sideBar = $('aside.sidebar');
+                const main = $('main.main');
 
                 $('.loading-screen').hide();
+
+
+                const toggleSidebarButton = $('button[data-click="toggle-sidebar"]');
+
+                $(toggleSidebarButton).on('click', (e) => {
+                    e.preventDefault();
+
+                    if ($(sideBar).css('left') == '-250px'){
+                        // Open the side bar
+                        $(sideBar).addClass('sidebar--open-mobile');
+                    } else {
+                        // close the side bar
+                        $(sideBar).removeClass('sidebar--open-mobile');
+                    }
+                });
+
+
             });
         </script>
     </body>
