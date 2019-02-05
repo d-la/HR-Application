@@ -23,5 +23,11 @@
         &--toggler{
             display: block;
         }
+
+        // Custom navbar styles
+        &--custom{
+            flex: 0 0 100%;
+            text-align: right;
+        }
     }
 }

@@ -42,6 +42,16 @@ body {
   font-size: 0.6em;
 }
 
+.dropdown-menu {
+  left: inherit !important;
+  right: 0;
+}
+
+@media (max-width: 700px) {
+  .dropdown-menu {
+    position: absolute !important;
+  }
+}
 .sidebar {
   position: fixed;
   top: 0;
@@ -302,6 +312,10 @@ body {
 @media (max-width: 700px) {
   .navbar--toggler {
     display: block;
+  }
+  .navbar--custom {
+    flex: 0 0 100%;
+    text-align: right;
   }
 }
 @supports (display: flex) {

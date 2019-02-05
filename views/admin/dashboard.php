@@ -32,6 +32,23 @@
             <button class="navbar--toggler" data-click="toggle-sidebar">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
+            <ul class="navbar-nav navbar--custom ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Daniel La
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="" class="nav-link">Settings <i class="fa fa-cogs"></i> </a>
+                </li> -->
+            </ul>
 
             <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -237,11 +254,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
         <script>
-            $(window).on('load', () => {
-                $('.loading-screen').hide();
-            });
-
             $(document).ready( () => {
+                // Once the document is ready, hide the loader
+                $('.loading-screen').hide();
+
                 const sideBar = $('aside.sidebar');
                 const main = $('main.main');
 
