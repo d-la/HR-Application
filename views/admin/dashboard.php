@@ -21,104 +21,10 @@
                 <article class="loader"></article>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" data-click="toggle-sidebar">
-                HR Application
-            </a>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <button class="navbar--toggler" data-click="toggle-sidebar">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-            <ul class="navbar-nav navbar--custom ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Daniel La
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Log Out</a>
-                    </div>
-                </li>
-                <!-- <li class="nav-item">
-                    <a href="" class="nav-link">Settings <i class="fa fa-cogs"></i> </a>
-                </li> -->
-            </ul>
+        
+        <?php require_once 'require/navigation.php'; ?>
 
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div> -->
-        </nav>
-
-        <aside class="sidebar">
-            <ul class="sidebar__list">
-                <li class="sidebar__user-info">
-                    <div class="user">
-                        <span class="user__name">
-                            Daniel La
-                        </span>
-                        <span class="user__type">
-                            Admin
-                        </span>
-                    </div>
-                </li>
-                <a href="/admin/dashboard" class="sidebar__link sidebar__link--round-borders">
-                    <li class="sidebar__list-item">
-                        <i class="fa fa-line-chart"></i>
-                        Dashboard
-                    </li>
-                </a>
-                <a href="/admin/organizations" class="sidebar__link sidebar__link--round-borders">
-                    <li class="sidebar__list-item">
-                        <i class="fa fa-university"></i>
-                        Organizations
-                    </li>
-                </a>
-                <a href="" class="sidebar__link sidebar__link--round-borders">
-                    <li class="sidebar__list-item">
-                        <i class="fa fa-users"></i>
-                        User List
-                    </li>
-                </a>
-                <a href="" class="sidebar__link sidebar__link--round-borders">
-                    <li class="sidebar__list-item">
-                        Hello
-                    </li>
-                </a>
-                <a href="" class="sidebar__link sidebar__link--round-borders">
-                    <li class="sidebar__list-item">
-                        Hello
-                    </li>
-                </a>
-            </ul>
-        </aside>
+        <?php require_once 'require/sidebar.php'; ?>
         <main class="main">
             <h1 class="page-title">Admin Dashboard <small>Welcome, Daniel</small></h1>
 
