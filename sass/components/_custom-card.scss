@@ -23,7 +23,8 @@
     }
 }
 
-@media (max-width: 767px){
+// Breakpoint where the content elements stack
+@media (max-width: 1043px){
     .custom-card{
 
         &__left-content{
