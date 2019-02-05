@@ -126,6 +126,18 @@ body {
   color: #fff;
   font-size: 0.95em;
 }
+.panel__actions {
+  position: absolute;
+  right: 0.5em;
+  width: auto;
+}
+.panel__actions i[data-click=handle-panel-body] {
+  color: #FFF;
+}
+.panel__actions i[data-click=handle-panel-body]:hover {
+  cursor: pointer;
+  color: #dad7d7;
+}
 .panel__body {
   position: relative;
   display: block;
@@ -198,6 +210,16 @@ body {
   color: rgba(255, 255, 255, 0.85);
   transition: all 0.2s ease-in;
 }
+.widget__icon {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  font-size: 4em;
+  z-index: -1;
+}
+.widget__icon i {
+  color: black;
+}
 
 .custom-card {
   position: relative;
@@ -221,7 +243,7 @@ body {
   padding: 0 0.75em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1043px) {
   .custom-card__left-content {
     flex: 0 0 100%;
     border-right: none;
