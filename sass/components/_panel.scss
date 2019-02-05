@@ -17,6 +17,21 @@
         font-size: .95em;
     }
 
+    &__actions{
+        position: absolute;
+        right: .5em;
+        width: auto;
+
+        i[data-click="handle-panel-body"]{
+            color: #FFF;
+
+            &:hover{
+                cursor: pointer;
+                color: $theme-color-grey-dark;
+            }
+        }
+    }
+
     &__body{
         position: relative;
         display: block;
