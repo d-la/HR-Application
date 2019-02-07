@@ -1,6 +1,8 @@
 <?php 
 namespace HRApplication;
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/include/mysqlconn.php';
+
 class Organization{
 
     private $organizationId, $organizationName, $organizationDesc;
@@ -100,11 +102,10 @@ class Organization{
      * 
      * @return boolean true if the query is successful
      */
-    public function insertNewOrganization($organizationName, $organizationDesc, $street1, $street2, $city, $state, $zip){
+    public function insertNewOrganization($organizationName, $street1, $street2, $city, $state, $zip){
         // Hold all the data so we can loop through it to build the query
         $organizationData = array(
             $organizationName,
-            $organizationDesc,
             $street1,
             $street2,
             $city,
@@ -113,14 +114,12 @@ class Organization{
         );
 
         // Initialize MySQL connection
-        // $mysqli = initializeMySqlConnection();
+        $mysqli = initializeMySqlConnection();
 
         // Start building the query
         $sqlQuery = "CALL spInsertNewOrganization(";
         foreach ($organizationData as $arrayKey => $organizationValue){
-            if (!empty($organizationValue)){
-                $sqlQuery .= "'" . addslashes($mysqli->real_escape_string($organizationValue)) . "', ";
-            }
+            $sqlQuery .= "'" . addslashes($mysqli->real_escape_string($organizationValue)) . "', ";
         }
         // Remove trailing comma and whitespace
         $sqlQuery = substr($sqlQuery, 0, strlen($sqlQuery) - 2);
