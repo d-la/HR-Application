@@ -51,7 +51,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                         echo $banner->getAlertBannerHtml($sessionAlertValue, $bannerMessage);
                     }
                     ?>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="panel">
                             <div class="panel__header">
                                 All Organizations
@@ -88,7 +88,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                         </div>
                     </div><!-- end .col-md-6 -->
 
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="panel">
                             <div class="panel__header">
                                 Add new organization
@@ -110,17 +110,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                                         <label for="street_2">Street 2 *</label>
                                         <input type="text" class="form-control" id="street_2" name="street_2" aria-describedby="street_2">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="city">City *</label>
-                                        <input type="text" class="form-control" id="city" name="city" aria-describedby="city" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="state">State *</label>
-                                        <input type="text" class="form-control" id="state" name="state" aria-describedby="state" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="zip">ZIP *</label>
-                                        <input type="text" class="form-control" id="zip" name="zip" aria-describedby="zip" required="required">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="city">City *</label>
+                                            <input type="text" class="form-control" id="city">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="state">State</label>
+                                            <select id="state" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="zip">Zip</label>
+                                            <input type="text" class="form-control" id="zip">
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Add Organization</button>
                                 </form>
