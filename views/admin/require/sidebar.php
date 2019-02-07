@@ -22,15 +22,16 @@
                 Organizations
             </li>
         </a>
-        <a href="" class="sidebar__link sidebar__link--round-borders">
+        <a href="/admin/departments" class="sidebar__link sidebar__link--round-borders">
+            <li class="sidebar__list-item">
+                <i class="fa fa-bookmark-o"></i>
+                Departments
+            </li>
+        </a>
+        <a href="/admin/users" class="sidebar__link sidebar__link--round-borders">
             <li class="sidebar__list-item">
                 <i class="fa fa-users"></i>
                 User List
-            </li>
-        </a>
-        <a href="" class="sidebar__link sidebar__link--round-borders">
-            <li class="sidebar__list-item">
-                Hello
             </li>
         </a>
         <a href="" class="sidebar__link sidebar__link--round-borders">
