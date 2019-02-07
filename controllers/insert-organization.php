@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Session';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Session.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
 
 // Gather POST data and assign them to an array
