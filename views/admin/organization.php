@@ -1,3 +1,7 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Session.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,6 +34,23 @@
 
             <div class="container-fluid">
                 <div class="row">
+                    <?php 
+                    $session = new HRApplication\Session;
+                    $sessionAlertValue = $session->getSessionValue('alert');
+
+                    if (isset($sessionAlertValue)){
+                        switch ($sessionAlertValue){
+                            case 'success':
+                                $bannerMessage = 'Organization added successfully!';
+                                break;
+                            case 'error':
+                                $bannerMessage = 'Unable to add organization!';
+                                break;
+                        }
+                        $banner = new HRApplication\AlertBanner();
+                        echo $banner->getAlertBannerHtml($sessionAlertValue, $bannerMessage);
+                    }
+                    ?>
                     <div class="col-md-8">
                         <div class="panel">
                             <div class="panel__header">
