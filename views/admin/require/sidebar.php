@@ -34,9 +34,10 @@
                 User List
             </li>
         </a>
-        <a href="" class="sidebar__link sidebar__link--round-borders">
+        <a href="/admin/schedules" class="sidebar__link sidebar__link--round-borders">
             <li class="sidebar__list-item">
-                Hello
+                <i class="fa fa-calendar"></i>
+                Schedules
             </li>
         </a>
     </ul>
