@@ -1,5 +1,7 @@
 <?php 
 
+namespace HRApplication;
+
 class AlertBanner{
 
     private $allowedAlertTypes = array('success', 'warning', 'error');
