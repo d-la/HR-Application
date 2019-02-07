@@ -30,7 +30,7 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="panel">
                             <div class="panel__header">
                                 All Organizations
@@ -44,11 +44,19 @@
                                         <thead>
                                             <tr>
                                                 <th>Organization Name</th>
-                                                <th>Organization Desc</th>
+                                                <th>Street 1</th>
+                                                <th>Street 2</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
                                             </tr>
                                         </thead> 
                                         <tbody>
                                             <tr>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
                                                 <td>Test</td>
                                                 <td>Test</td>
                                             </tr>
@@ -59,7 +67,7 @@
                         </div>
                     </div><!-- end .col-md-6 -->
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="panel">
                             <div class="panel__header">
                                 Add new organization
@@ -68,34 +76,30 @@
                                 </span>
                             </div>
                             <div class="panel__body">
-                                <form action="">
+                                <form action="/controllers/insert-organization.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label for="organizationName">Organization Name *</label>
-                                        <input type="text" class="form-control" id="organizationName" aria-describedby="organizationName">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="organizationDesc">Organization Description *</label>
-                                        <textarea class="form-control" id="organizationDesc"></textarea>
+                                        <label for="organization_name">Organization Name *</label>
+                                        <input type="text" class="form-control" id="organization_name" name="organization_name" aria-describedby="organization_name" required="required">
                                     </div>
                                     <div class="form-group">
                                         <label for="street_1">Street 1 *</label>
-                                        <input type="text" class="form-control" id="street_1" aria-describedby="street_1">
+                                        <input type="text" class="form-control" id="street_1" name="street_1" aria-describedby="street_1" required="required">
                                     </div>
                                     <div class="form-group">
                                         <label for="street_2">Street 2 *</label>
-                                        <input type="text" class="form-control" id="street_2" aria-describedby="street_2">
+                                        <input type="text" class="form-control" id="street_2" name="street_2" aria-describedby="street_2">
                                     </div>
                                     <div class="form-group">
                                         <label for="city">City *</label>
-                                        <input type="text" class="form-control" id="city" aria-describedby="city">
+                                        <input type="text" class="form-control" id="city" name="city" aria-describedby="city" required="required">
                                     </div>
                                     <div class="form-group">
                                         <label for="state">State *</label>
-                                        <input type="text" class="form-control" id="state" aria-describedby="state">
+                                        <input type="text" class="form-control" id="state" name="state" aria-describedby="state" required="required">
                                     </div>
                                     <div class="form-group">
                                         <label for="zip">ZIP *</label>
-                                        <input type="text" class="form-control" id="zip" aria-describedby="zip">
+                                        <input type="text" class="form-control" id="zip" name="zip" aria-describedby="zip" required="required">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Add Organization</button>
                                 </form>
