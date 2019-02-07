@@ -17,6 +17,11 @@ class AlertBanner{
         }
     }
 
+    /**
+     * Return the html for a banner. Alert type and message must be set
+     * 
+     * @return string html
+     */
     public function getAlertBannerHtml(){
         $this->alertHtml = '';
 
@@ -43,6 +48,12 @@ class AlertBanner{
         return $this->alertHtml;
     }
 
+    /**
+     * Set the alert message. Should be called before AlertBanner::getAlertBannerHtml
+     * 
+     * @param string $alertMessage: the message to be printed
+     *
+     */
     public function setAlertMessage($alertMessage){
         if (isset($alertMessage) && (is_string($alertMessage)) ){
             $this->alertMessage = $alertMessage;
