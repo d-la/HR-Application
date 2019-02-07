@@ -16,7 +16,7 @@ class AccountType{
 
         $mysqli = initializeMySqlConnection();
 
-        $sqlQuery = 'CALL spSelectAllAccountTypes()';
+        $sqlQuery = 'CALL spSelectAllAccountTypes();';
 
         $resultSet = $mysqli->query($sqlQuery);
 
