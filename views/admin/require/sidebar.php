@@ -16,12 +16,6 @@
                 Dashboard
             </li>
         </a>
-        <a href="/admin/organizations" class="sidebar__link sidebar__link--round-borders">
-            <li class="sidebar__list-item">
-                <i class="fa fa-university"></i>
-                Organizations
-            </li>
-        </a>
         <a href="/admin/departments" class="sidebar__link sidebar__link--round-borders">
             <li class="sidebar__list-item">
                 <i class="fa fa-bookmark-o"></i>
