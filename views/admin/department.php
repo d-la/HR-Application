@@ -101,7 +101,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                                         <label for="departmentDesc">Department Description *</label>
                                         <textarea class="form-control" id="departmentDesc" name="departmentDesc" aria-describedby="departmentDesc" required="required"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Add Department</button>
+                                    <button type="submit" class="btn btn--theme">Add Department</button>
                                 </form>
                             </div>
                         </div>
