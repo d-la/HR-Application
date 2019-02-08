@@ -42,7 +42,7 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <a class="widget__link widget__link--color-white">
+                                <a href="/admin/departments" class="widget__link widget__link--color-white">
                                     View Details &rarr;
                                 </a>
                             </div>
@@ -61,7 +61,7 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <a class="widget__link widget__link--color-white">
+                                <a href="/admin/users" class="widget__link widget__link--color-white">
                                     View Details &rarr;
                                 </a>
                             </div>
@@ -80,7 +80,7 @@
                             125
                             </div>
                             <div class="widget__footer">
-                                <a class="widget__link widget__link--color-white">
+                                <a href="/admin/schdules" class="widget__link widget__link--color-white">
                                     View Details &rarr;
                                 </a>
                             </div>
@@ -99,7 +99,7 @@
                                 125
                             </div>
                             <div class="widget__footer">
-                                <a class="widget__link widget__link--color-white">
+                                <a href="/admin/schedules" class="widget__link widget__link--color-white">
                                     View Details &rarr;
                                 </a>
                             </div>
