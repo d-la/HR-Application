@@ -108,6 +108,25 @@ class Department{
             return $resultSet;
         }
     }
+
+    /**
+     * Select a departments information
+     * 
+     * @param int $departmentId
+     * 
+     * @return object mysql object
+     */
+    public function selectDepartmentInformation($departmentId){
+        if (is_numeric($departmentId)){
+            $mysqli = initializeMysqlConnection();
+
+            $sqlQuery = "CALL spSelectDepartmentInformation($departmentId);";
+
+            $resultSet = $mysqli->query($sqlQuery);
+
+            return $resultSet;
+        }
+    }
 }
 
 
