@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Session.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Department.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                         $banner = new HRApplication\AlertBanner();
                         echo $banner->getAlertBannerHtml($sessionAlertValue, $bannerMessage);
                     }
+
+                    $departments = new HRApplication\Department();
+                    $usersOrganization = $session->getSessionValue('organizationId');
+                    $allOrganizationDepartments = $departments->selectAllDepartmentsFromOrganization($usersOrganization);
+                    $totalNumberOfDepartments = $allOrganizationDepartments->num_rows;
                     ?>
                     <div class="col-md-8">
                         <div class="panel">
@@ -67,13 +72,32 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                                                 <th>Departments Name</th>
                                                 <th>Department Description</th>
                                                 <th>Department Manager</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead> 
                                         <tbody>
+                                            <?php
+                                            if ($allOrganizationDepartments->num_rows > 0){
+                                                while ($row = $allOrganizationDepartments->fetch_assoc()){
+
+                                                    $departmentManager = is_null($row['manager_id']) ? 'N/A' : $row['manager_id'];
+
+                                                    ?>
+                                                    <tr>
+                                                        <td><?= $row['department_name'] ?></td>
+                                                        <td><?= $row['department_desc'] ?></td>
+                                                        <td><?= $departmentManager ?></td>
+                                                        <td>
+                                                            <i class="fa fa-cogs" data-click="edit-department"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                            
+                                            ?>
                                             <tr>
-                                                <td>Test</td>
-                                                <td>Test</td>
-                                                <td>John Doe</td>
+                                                <td colspan="4">Total Departments: <?= $totalNumberOfDepartments ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
