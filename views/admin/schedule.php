@@ -82,8 +82,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                                                 <td style="vertical-align:middle;">Test</td>
                                                 <td style="vertical-align:middle;">Test</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary">Approve</button>
-                                                    <button type="button" class="btn btn-primary">Deny</button>
+                                                    <button type="button" class="btn btn--theme">Approve</button>
+                                                    <button type="button" class="btn btn--theme">Deny</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -127,7 +127,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/Organization.php';
                                             <input type="time" class="form-control" id="end_time">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Add Organization</button>
+                                    <button type="submit" class="btn btn--theme">Add Organization</button>
                                 </form>
                             </div>
                         </div>

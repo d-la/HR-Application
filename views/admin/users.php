@@ -55,6 +55,53 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/AccountType.php';
                     ?>
                 </div>
                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel">
+                            <div class="panel__header">
+                                Full list of users within ::Organization Name::
+                                <span class="panel__actions">
+                                    <i class="fa fa-minus" data-click="handle-panel-body"></i>
+                                </span>
+                            </div>
+                            
+                            <div class="panel__body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Address</th>
+                                            <th>Employment Type</th>
+                                            <th>Compensation</th>
+                                            <th>Department</th>
+                                            <th>Role</th>
+                                            <th>Date Hired</th>
+                                            <th>Actions</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>Test</td>
+                                                <td>
+                                                    <i class="fa fa-cogs" data-click="edit-user"></i>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-xs-12 col-md-8">
                         <div class="panel">
                             <div class="panel__header">
@@ -173,7 +220,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/AccountType.php';
                                             <input type="text" class="form-control" id="compensation" name="compensation" aria-describedby="compensation" required="required">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Add User</button>
+                                    <button type="submit" class="btn btn--theme">Add User</button>
                                 </form>
                             </div>
                         </div>
