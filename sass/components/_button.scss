@@ -1,0 +1,15 @@
+// New styles for bootstrap classes
+.btn{
+
+    &--theme{
+        background-color: $fb-blue;
+        border-color: $fb-blue;
+        color: #FFF;
+
+        &:hover{
+            background-color: $fb-blue-dark;
+            border-color: $fb-blue-dark;
+            color: #FFF;
+        }
+    }
+}
