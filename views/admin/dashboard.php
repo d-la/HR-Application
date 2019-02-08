@@ -33,10 +33,10 @@
                     <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget widget--blue-bg">
                             <div class="widget__icon">
-                                <i class="fa fa-users"></i>
+                                <i class="fa fa-building" aria-hidden="true"></i>
                             </div>
                             <div class="widget__title">
-                            Total Employees
+                            Total Departments
                             </div>
                             <div class="widget__content">
                             125
@@ -51,6 +51,9 @@
 
                     <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget widget--red-bg">
+                            <div class="widget__icon">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </div>
                             <div class="widget__title">
                             Total Employees
                             </div>
@@ -67,8 +70,11 @@
 
                     <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget widget--green-bg">
+                            <div class="widget__icon">
+                                <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+                            </div>
                             <div class="widget__title">
-                            Total Employees
+                            Total Time Off Requests
                             </div>
                             <div class="widget__content">
                             125
@@ -83,8 +89,11 @@
 
                     <div class="col-xs-12 col-md-6 col-lg-3">
                         <div class="widget widget--black-bg">
+                            <div class="widget__icon">
+                                <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                            </div>
                             <div class="widget__title">
-                            Total Employees
+                            Total Upcoming Schedules
                             </div>
                             <div class="widget__content">
                                 125
