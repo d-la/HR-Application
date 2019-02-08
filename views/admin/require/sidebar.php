@@ -18,7 +18,7 @@
         </a>
         <a href="/admin/departments" class="sidebar__link sidebar__link--round-borders">
             <li class="sidebar__list-item">
-                <i class="fa fa-bookmark-o"></i>
+                <i class="fa fa-building" aria-hidden="true"></i>
                 Departments
             </li>
         </a>
